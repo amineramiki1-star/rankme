@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RankMe</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      cursor: default;
+    }
+    
+    /* Custom styles for Fire TV remote navigation */
+    .focusable:focus {
+      outline: none;
+      box-shadow: 
+        0 0 0 4px rgba(255, 255, 255, 0.95), /* Sharp inner white ring */
+        0 0 0 8px rgba(236, 72, 153, 0.8), /* Pink glow */
+        0 0 30px 10px rgba(76, 201, 240, 0.6); /* Cyan outer haze */
+      transform: scale(1.05);
+      z-index: 10;
+    }
+
+    .focusable {
+      transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+      border-radius: 0.75rem; /* Match rounded-xl */
+    }
+    
+    /* Ensure child buttons also look good */
+    .focusable-child:focus {
+        outline: none;
+        box-shadow: 0 0 0 4px rgba(236, 72, 153, 0.8); /* pink-500 */
+    }
+
+    .focusable-child {
+        transition: transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
+    
+    .focusable-child:focus {
+        transform: scale(1.1);
+    }
+    
+    @keyframes button-success-pop {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+      100% { transform: scale(1); }
+    }
+    .animate-success-pop {
+      animation: button-success-pop 0.6s ease-in-out;
+    }
+
+    /* General-purpose animations */
+    @keyframes fade-in {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .animate-fade-in {
+      animation: fade-in 0.5s ease-in-out;
+    }
+
+    @keyframes fade-in-down {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in-down {
+      animation: fade-in-down 0.6s ease-out;
+    }
+
+    @keyframes scale-in {
+      from { transform: scale(0.9); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+    .animate-scale-in {
+      animation: scale-in 0.3s ease-out;
+    }
+
+    @keyframes pulse-glow {
+      0%, 100% {
+        box-shadow: 0 0 5px rgba(192, 132, 252, 0), 0 0 5px rgba(192, 132, 252, 0);
+      }
+      50% {
+        box-shadow: 0 0 20px rgba(192, 132, 252, 0.6), 0 0 30px rgba(192, 132, 252, 0.4);
+      }
+    }
+    .animate-pulse-glow {
+      animation: pulse-glow 2.5s infinite ease-in-out;
+    }
+  </style>
+<link rel="stylesheet" href="/index.css">
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/"
+  }
+}
+</script>
+  <script type="module" crossorigin src="/rankme/assets/index-BblBEmEW.js"></script>
+</head>
+  <body class="bg-gray-900">
+    <div id="root"></div>
+  </body>
+</html>
